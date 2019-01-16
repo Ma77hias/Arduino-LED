@@ -1,0 +1,18 @@
+int time = 1000;
+
+void setup() 
+{
+  DDRD = 0b00010000;
+}
+
+void loop()
+{
+  for(int x = 1; x <= time; x++)
+  {
+    PORTD = 0b00010000;
+    delayMicroseconds(x);
+    PORTD = 0b00000000;
+    delayMicroseconds(time-x);
+  }
+}
+  
